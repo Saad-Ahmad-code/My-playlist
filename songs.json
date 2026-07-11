@@ -1,0 +1,26 @@
+[
+  { 
+    "id": "khasara",
+    "title": "Khasara", 
+    "artist": "Abdul Hannan & Samar Jafri",
+    "file": "khasara-abdul-hannan-samar-jafri.mp3",
+    "duration": "4:32",
+    "cover": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop"
+  },
+  { 
+    "id": "paaro",
+    "title": "Paaro", 
+    "artist": "Aditya Rikhari",
+    "file": "07111.mp3",
+    "duration": "2:34",
+    "cover": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop"
+  },
+  { 
+    "id": "inaam",
+    "title": "Inaam", 
+    "artist": "Anuv jain",
+    "file": "Inaam.mp3",
+    "duration": "4:17",
+    "cover": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&h=300&fit=crop"
+  }
+]

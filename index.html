@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 My Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎵 Music Player</h1>
+            <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search songs or artists...">
+            <button id="search-clear" class="search-clear" style="display: none;" aria-label="Clear search">✕</button>
+        </div>
+
+        <!-- Audio Player -->
+        <audio id="player" controls preload="metadata"></audio>
+
+        <!-- Now Playing Card with Album Art -->
+        <div id="now-playing-card" class="now-playing-card" style="display: none;">
+            <div class="album-art-container">
+                <img id="album-art" src="" alt="Album Art" class="album-art">
+                <div class="playing-indicator hidden">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="now-playing-info">
+                <div class="now-playing-title" id="now-playing-title">Now Playing</div>
+                <div class="now-playing-artist" id="now-playing-artist">Unknown Artist</div>
+            </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button onclick="prevSong()" class="control-btn">⏮ Previous</button>
+            <button onclick="togglePlayPause()" id="play-pause-btn" class="control-btn main-btn">▶ Play</button>
+            <button onclick="nextSong()" class="control-btn">⏭ Next</button>
+            <button onclick="toggleShuffle()" id="shuffle-btn" class="control-btn">🔀 Shuffle (Off)</button>
+            <button onclick="toggleRepeat()" id="repeat-btn" class="control-btn">🔁 Repeat (Off)</button>
+        </div>
+
+        <!-- Keyboard Shortcuts Info -->
+        <div class="keyboard-shortcuts">
+            <small>💡 Tip: Space = Play/Pause | ← → = Skip Songs | M = Mute</small>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-control">
+            <label for="progress">⏩ Progress</label>
+            <input type="range" id="progress" min="0" max="100" value="0">
+            <div id="time-display">00:00 / 00:00</div>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-control">
+            <button id="mute-toggle-btn" class="volume-label-btn" onclick="toggleMute()">🔊 Vol High</button>
+            <input type="range" id="volume" min="0" max="1" step="0.05" value="1">
+        </div>
+
+        <!-- Playlist -->
+        <h2>Playlist</h2>
+        <div class="playlist" id="playlist"></div>
+
+        <!-- Queue Section -->
+        <h2>⏳ Queue (Next 5 Songs)</h2>
+        <div class="queue-section">
+            <div class="queue" id="queue"></div>
+        </div>
+
+        <!-- Recently Played -->
+        <h2>🕐 Recently Played</h2>
+        <div class="recently-played" id="recently-played"></div>
+
+        <!-- Favorites Section -->
+        <h2>⭐ Favorites</h2>
+        <div class="favorites" id="favorites"></div>
+    </div>
+
+    <!-- Song data lives here so the player works by just double-clicking this file —
+         no local server required. Edit this list directly to add/remove songs.
+         (script.js will also fall back to fetching songs.json if this is ever removed.) -->
+    <script type="application/json" id="songs-data">
+[
+  {
+    "id": "khasara",
+    "title": "Khasara",
+    "artist": "Abdul Hannan & Samar Jafri",
+    "file": "khasara-abdul-hannan-samar-jafri.mp3",
+    "duration": "4:32",
+    "cover": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop"
+  },
+  {
+    "id": "paaro",
+    "title": "Paaro",
+    "artist": "Aditya Rikhari",
+    "file": "07111.mp3",
+    "duration": "2:34",
+    "cover": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop"
+  },
+  {
+    "id": "inaam",
+    "title": "Inaam",
+    "artist": "Anuv jain",
+    "file": "Inaam.mp3",
+    "duration": "4:17",
+    "cover": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&h=300&fit=crop"
+  }
+]
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
