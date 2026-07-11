@@ -126,7 +126,10 @@ async function loadPlaylist() {
         renderRecentlyPlayed();
 
         if (songs.length > 0) {
-            playSong(0);
+        currentIndex = 0;
+        updateNowPlaying();
+        highlightCurrentSong();
+        player.src = encodeURI(songs[0].file); // load but don't play
         }
 
         // Handle song end
